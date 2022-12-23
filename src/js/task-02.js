@@ -8,18 +8,10 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const listEl = document.querySelector('#ingredients');
+const listContentEl = ingredients
+    .map((ingredient) => `<li>${ingredient}</li>`)
+    .join('');
 
-console.log(ingredients);
+listEl.insertAdjacentHTML('beforeend', listContentEl);
 
-const makeList = (ingredient) => {
-  const list = document.querySelector('#ingredients');
-  const ingredientsEl = document.createElement('li');
-  ingredientsEl.classList.add('item');
-  ingredientsEl.textContent = ' ';
-  console.log(ingredientsEl);
-  list.append(ingredientsEl);
-
-  return list;
-};
-const elements = ingredients.map(makeList);
-console.log(elements);
