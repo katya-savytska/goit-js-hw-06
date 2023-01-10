@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -13,3 +14,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const listEl = document.querySelector('.gallery');
+
+const makeGallaryEl = images
+    .map((image) => {
+      const addEl = listEl.insertAdjacentHTML(
+          'beforeend',
+          `<li><img src=${image.url} alt='${image.alt}
+    'width = 1260 height = 750> </img></li>`);
+      return addEl;
+    })
+    .join('');
+
+listEl.classList.add('img-style');
+console.log(makeGallaryEl);
+listEl.insertAdjacentHTML('afterbegin', makeGallaryEl);

@@ -1,16 +1,9 @@
 /* eslint-disable linebreak-style */
-const categoryList = document.querySelector('#categories');
-const categoryListEl = categoryList.children;
-const numbOfEl = categoryListEl.length;
-console.log('Number of categories:', numbOfEl);
-
-
-/* document.querySelectorAll('li.item');
-
-const numbOfEl = categoryList.length;
-console.log('Number of categories:', numbOfEl);
-const categoryTitleEl = document.querySelector('h2');
-const categoryTitle = categoryTitleEl.textContent;
-console.log('Category: ', categoryTitle); */
-
-
+const listEl = document.querySelector('#categories');
+console.log('Number of categories:', listEl.children.length);
+// eslint-disable-next-line linebreak-style
+const ListItemEl = document.querySelectorAll('.item');
+for (const item of ListItemEl) {
+  console.log('Category:', item.firstElementChild.textContent);
+  console.log('Elements:', item.lastElementChild.children.length);
+}
