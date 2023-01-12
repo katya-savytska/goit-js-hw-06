@@ -19,15 +19,10 @@ const images = [
 const listEl = document.querySelector('.gallery');
 
 const makeGallaryEl = images
-    .map((image) => {
-      const addEl = listEl.insertAdjacentHTML(
-          'beforeend',
-          `<li><img src=${image.url} alt='${image.alt}
-    'width = 1260 height = 750> </img></li>`);
-      return addEl;
-    })
+    .map((image) => `<li><img src='${image.url}' alt='${image.alt}' 
+    width = 1260 height = 750> </img></li>`)
     .join('');
 
 listEl.classList.add('img-style');
+listEl.insertAdjacentHTML('beforeend', makeGallaryEl);
 console.log(makeGallaryEl);
-
