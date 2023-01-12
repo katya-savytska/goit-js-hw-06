@@ -9,9 +9,13 @@ const ingredients = [
   'Condiments',
 ];
 const listEl = document.querySelector('#ingredients');
-const listContentEl = ingredients
-    .map((ingredient) => `<li>${ingredient}</li>`)
-    .join('');
+listEl.append(
+    ...ingredients.map((item) => {
+      const listContentEl = document.createElement('li');
+      listContentEl.textContent = item;
+      return listContentEl;
+    }),
+);
 
 listEl.insertAdjacentHTML('beforeend', listContentEl);
 

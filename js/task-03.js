@@ -30,4 +30,4 @@ const makeGallaryEl = images
 
 listEl.classList.add('img-style');
 console.log(makeGallaryEl);
-listEl.insertAdjacentHTML('afterbegin', makeGallaryEl);
+
